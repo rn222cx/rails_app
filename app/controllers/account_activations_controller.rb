@@ -15,8 +15,8 @@ class AccountActivationsController < ApplicationController
     end
   end
 
-  # private
-  # def create_activation_digest
-  #
-  # end
+  private
+  def create_activation_digest
+
+  end
 end
