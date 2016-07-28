@@ -82,19 +82,30 @@ Rails.application.configure do
   end
 
   # Do not dump schema after migrations.
-  config.active_record.dump_schema_after_migration = false
+  # config.active_record.dump_schema_after_migration = false
+  #
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.delivery_method = :smtp
+  # host = 'stark-savannah-36676.herokuapp.com'
+  # config.action_mailer.default_url_options = { host: host }
+  # ActionMailer::Base.smtp_settings = {
+  #   :address        => 'smtp.gmail.com',
+  #   :port           => '587',
+  #   :authentication => :plain,
+  #   :user_name      => 'roynilsson87@gmail.com',
+  #   :password       => 'tr0113k4tt3n$',
+  #   :domain         => 'heroku.com',
+  #   :enable_starttls_auto => true
+  # }
 
-  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'stark-savannah-36676.herokuapp.com'
-  config.action_mailer.default_url_options = { host: host }
-  ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.gmail.com',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => 'roynilsson87@gmail.com',
-    :password       => 'tr0113k4tt3n$',
-    :domain         => 'heroku.com',
-    :enable_starttls_auto => true
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.gmail.com",
+   :port                 => 587,
+   :user_name            => ENV['roynilsson87@gmail.com'],
+   :password             => ENV['tr0113k4tt3n$'],
+   :authentication       => "plain",
+  :enable_starttls_auto => true
   }
 end
